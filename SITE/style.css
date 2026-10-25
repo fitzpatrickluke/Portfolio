@@ -1,0 +1,332 @@
+@font-face {
+  font-family: "Mundial"; /* Name you want to call it in your CSS */
+  src: url("../FONTS/demo-fonts/Fontspring-DEMO-4-mundial-regular-tty.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+    --bg: #ffffff;    
+    --bg-dark: #1a1a1a;   
+    --text: #1a1a1a;
+    --body-text: #555555;
+    --accent-text: #999999;
+    --accent-text-light: #bbbbbb;
+    --text-on-bg: var(--bg);
+    --accent: #e07b63;
+
+    --font:  "Mundial", sans-serif;
+
+    --text-size-title: 90px;
+    --text-size-h1: 30px;
+    --text-size-h2: 24px;
+    --text-size-body-XL: 20px;
+    --text-size-body-large: 18px;
+    --text-size-body: 16px;
+
+    --line-height-header: 1.1;
+    --line-height-body: 1.5;
+
+    --gap-XS: 0.5rem;
+    --gap-small: 1rem;
+    --gap-medium: 2rem;
+    --gap-large: 4rem;
+    
+    --margin-small: 1rem;
+    --margin-medium: 2rem;
+    --margin-large: 4rem;
+    --margin-XL: 8rem;
+    
+}
+
+body {
+    margin: 0 var(--margin-medium);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+main {
+    flex: 1;
+}
+
+h1 {
+    margin: 0 0 var(--margin-medium) 0;
+    font-family: var(--font);
+    color: var(text);
+    font-size: var(--text-size-h1);
+    line-height: var(--line-height-header);
+}
+
+p {
+    margin: 0 0 var(--margin-small) 0;
+    font-family: var(--font);
+    color: var(--body-text);
+    line-height: var(--line-height-body);
+}
+
+.p-large {
+    font-size: var(--text-size-body-large);
+}
+
+.p-XL {
+    font-size: var(--text-size-body-XL);
+}
+
+.mastheadText {
+    margin: 0;
+    color: var(--accent-text);
+    font-size: var(--text-size-h1);
+    line-height: var(--line-height-header);
+    font-family: var(--font);
+    font-weight: normal;
+    margin: 0 0 var(--margin-large) 0;
+}
+
+.masthead {
+    margin: 0 0 var(--margin-medium) 0;
+}
+
+.masthead h1 {
+  color: var(--text);
+  font-size: var(--text-size-title);
+  line-height: var(--line-height-header);
+  font-family: var(--font);
+  font-weight: normal;
+}
+
+#projects {
+  display: flex;
+  flex-direction: column;
+
+  gap: var(--gap-small);
+}
+
+.project {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 320px; 
+
+  text-decoration: none;
+}
+
+.project.flip {
+  flex-direction: row-reverse;
+}
+
+.project .thumb {
+  flex: 0 0 40%;
+  height: 100%;
+}
+
+.project .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project .title {
+  flex: 0 0 60%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--bg-dark);
+  color: var(--accent);
+  font-family: var(--font);
+  font-size: var(--text-size-h2);
+  line-height: var(--line-height-header);
+  font-weight: normal;
+
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.project:hover .title {
+    background-color: var(--accent);
+    color: var(--text);
+}
+
+.siteHeader {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    border-bottom: 5px solid var(--accent);
+    margin-bottom: var(--margin-medium);
+}
+
+
+.siteHeader nav a {
+    color: var(--accent-text);
+    text-decoration: none;
+    
+    font-family: var(--font);
+    font-size: var(--text-size-body-large);
+    line-height: var(--line-height-body);
+
+    margin-right: var(--margin-medium);
+
+      transition: background-color 0.4s ease, color 0.4s ease;
+
+}
+
+.siteHeader nav a:hover {
+  color: var(--text);
+}
+
+.siteHeader nav a.active {
+  color: var(--text);
+}
+
+.siteFooter {
+    margin: var(--margin-medium) 0;
+    font-family: var(--font);
+    font-size: var(--text-size-body);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.siteFooter p{
+    color: var(--accent-text-light);
+    margin: 0;
+}
+
+.about {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.about .headshot {
+  flex: 0 0 auto;
+  max-height: 480px;
+  aspect-ratio: 1 / 1;
+}
+
+.about .headshot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about .desc {
+  flex: 1;
+  padding: 0 var(--margin-XL)
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-XS);
+    margin-bottom: var(--margin-small);
+    max-width: 640px;
+}
+.formGroup label{
+    margin: 0;
+    font-family: var(--font);
+    color: var(--body-text);
+}
+
+.formGroup input{
+  padding: 0.6rem;
+  border: 1px solid var(--accent-text-light);
+  border-radius: 6px;
+}
+
+
+
+.contact button {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 48px;
+  
+  background: var(--bg-dark);
+  color: var(--text-on-bg);
+  font-size: var(--text-size-body);
+  font-family: var(--font);
+  cursor: pointer;
+
+    
+
+    transition: background-color 0.4s ease, color 0.4s ease;
+
+}
+
+.contact button:hover {
+  background: var(--accent);
+  color: var(--text);
+}
+
+
+/* ==========================================================================
+   RESPONSIVE STYLES
+   ========================================================================== */
+
+   /* ---------- Tablet  ---------- */
+@media (max-width: 900px) {
+    h1 {
+    margin: 0 0 var(--margin-small) 0;
+  }
+
+  .project {
+        height: 240px; 
+    }
+
+
+    .about {
+        flex-direction: column;
+    }
+
+    .about .headshot {
+        margin: 0 0 var(--margin-small) 0;
+        max-height: 240px;
+    }
+
+    .about .desc {
+        padding: 0;
+    }
+}
+/* ---------- Mobile  ---------- */
+@media (max-width: 600px) {
+
+  /* Shrink the shared variables so every rule that uses them scales down */
+  :root {
+    --text-size-title: 44px;
+    --text-size-h1: 26px;
+    --text-size-h2: 18px;
+    --text-size-body-XL: 16px;
+    --text-size-body-large: 14px;
+    --text-size-body: 14px;
+    --margin-large: 2rem;
+  }
+
+  body {
+    margin: 0 var(--margin-small);
+  }
+  
+.project,
+  .project.flip {
+    flex-direction: column;
+    height: auto; /* Allow height to adjust based on content */
+  }
+
+  .project .thumb {
+    flex: 0 0 auto;
+    width: 100%;
+    height: 240px;
+  }
+  .project .title {
+    flex: 0 0 auto;
+    width: 100%;
+    min-height: 64px;
+    
+  }
+
+
+
+}
