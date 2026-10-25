@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Mundial"; /* Name you want to call it in your CSS */
-  src: url("../FONTS/demo-fonts/Fontspring-DEMO-4-mundial-regular-tty.otf") format("opentype");
+  src: url("FONTS/demo-fonts/Fontspring-DEMO-4-mundial-regular-tty.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }

@@ -8,22 +8,22 @@ const SITE = {
     {
       title: "Denver Zoo Website Redesign",
       link: "denver-zoo.html",
-      image: "../ASSETS/Home/portfolioZoo.png"
+      image: "ASSETS/Home/portfolioZoo.png"
     },
     {
       title: "Library of Congress Brand Redesign",
       link: "library-of-congress-brand-redesign.html",
-      image: "../ASSETS/Home/portfolioLOC.png"
+      image: "ASSETS/Home/portfolioLOC.png"
     },
     {
       title: "Sephora UX Research Report",
       link: "sephora-ux-research-report.html",
-      image: "../ASSETS/Home/portfolioSephora.png"
+      image: "ASSETS/Home/portfolioSephora.png"
     },
     {
       title: "HD-2D Scene",
       link: "hd2d-scene.html",
-      image: "../ASSETS/Home/portfolioHD.png"
+      image: "ASSETS/Home/portfolioHD.png"
     }
   ]
 };
