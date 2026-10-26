@@ -1,9 +1,4 @@
-@font-face {
-  font-family: "Mundial"; /* Name you want to call it in your CSS */
-  src: url("../FONTS/demo-fonts/Fontspring-DEMO-4-mundial-regular-tty.otf") format("opentype");
-  font-weight: normal;
-  font-style: normal;
-}
+
 
 :root {
     --bg: #ffffff;    
@@ -14,8 +9,6 @@
     --accent-text-light: #bbbbbb;
     --text-on-bg: var(--bg);
     --accent: #e07b63;
-
-    --font:  "Mundial", sans-serif;
 
     --text-size-title: 90px;
     --text-size-h1: 30px;
