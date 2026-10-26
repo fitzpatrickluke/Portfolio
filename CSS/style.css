@@ -10,12 +10,14 @@
     --text-on-bg: var(--bg);
     --accent: #e07b63;
 
+    --font: sans-serif; 
+
     --text-size-title: 90px;
-    --text-size-h1: 30px;
-    --text-size-h2: 24px;
-    --text-size-body-XL: 20px;
-    --text-size-body-large: 18px;
-    --text-size-body: 16px;
+    --text-size-h1: 60px;
+    --text-size-h2: 40px;
+    --text-size-h3: 24px;
+    --text-size-body: 20px;
+    --text-size-body-small: 16px;
 
     --line-height-header: 1.1;
     --line-height-body: 1.5;
@@ -44,10 +46,26 @@ main {
 }
 
 h1 {
-    margin: 0 0 var(--margin-medium) 0;
+    margin: var(--margin-medium) 0;
     font-family: var(--font);
     color: var(text);
     font-size: var(--text-size-h1);
+    line-height: var(--line-height-header);
+}
+
+h2 {
+    margin: var(--margin-medium) 0 var(--margin-medium) 0;
+    font-family: var(--font);
+    color: var(text);
+    font-size: var(--text-size-h2);
+    line-height: var(--line-height-header);
+}
+
+h3 {
+    margin: var(--margin-medium) 0 var(--margin-small) 0;
+    font-family: var(--font);
+    color: var(text);
+    font-size: var(--text-size-h3);
     line-height: var(--line-height-header);
 }
 
@@ -55,21 +73,14 @@ p {
     margin: 0 0 var(--margin-small) 0;
     font-family: var(--font);
     color: var(--body-text);
+    font-size: var(--text-size-body);
     line-height: var(--line-height-body);
-}
-
-.p-large {
-    font-size: var(--text-size-body-large);
-}
-
-.p-XL {
-    font-size: var(--text-size-body-XL);
 }
 
 .mastheadText {
     margin: 0;
     color: var(--accent-text);
-    font-size: var(--text-size-h1);
+    font-size: var(--text-size-h2);
     line-height: var(--line-height-header);
     font-family: var(--font);
     font-weight: normal;
@@ -130,7 +141,7 @@ p {
   background-color: var(--bg-dark);
   color: var(--accent);
   font-family: var(--font);
-  font-size: var(--text-size-h2);
+  font-size: var(--text-size-h3);
   line-height: var(--line-height-header);
   font-weight: normal;
 
@@ -156,7 +167,7 @@ p {
     text-decoration: none;
     
     font-family: var(--font);
-    font-size: var(--text-size-body-large);
+    font-size: var(--text-size-body-small);
     line-height: var(--line-height-body);
 
     margin-right: var(--margin-medium);
@@ -176,7 +187,7 @@ p {
 .siteFooter {
     margin: var(--margin-medium) 0;
     font-family: var(--font);
-    font-size: var(--text-size-body);
+    font-size: var(--text-size-body-small);
 
     display: flex;
     justify-content: center;
@@ -240,7 +251,7 @@ p {
   
   background: var(--bg-dark);
   color: var(--text-on-bg);
-  font-size: var(--text-size-body);
+  font-size: var(--text-size-body-small);
   font-family: var(--font);
   cursor: pointer;
 
@@ -254,6 +265,30 @@ p {
   background: var(--accent);
   color: var(--text);
 }
+
+.caseStudy {
+  max-width: 800px;
+  width: 55vw;
+  margin: 0 auto;
+}
+
+.imageFull {
+  width: 100%;
+  height: auto;
+}
+
+.imageGrid {
+  display: flex;
+  flex-wrap: wrap; /* Allows images to drop to the next row */
+  gap: var(--gap-XS);
+}
+
+.imageGrid img {
+  height: 200px;
+  width: auto;    /* preserve aspect ratio */
+  flex-grow: 0;   /* Stops horizontal stretching */
+}
+
 
 
 /* ==========================================================================
@@ -292,9 +327,8 @@ p {
     --text-size-title: 44px;
     --text-size-h1: 26px;
     --text-size-h2: 18px;
-    --text-size-body-XL: 16px;
-    --text-size-body-large: 14px;
-    --text-size-body: 14px;
+    --text-size-body: 16px;
+    --text-size-body-small: 14px;
     --margin-large: 2rem;
   }
 
