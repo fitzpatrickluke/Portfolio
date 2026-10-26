@@ -10,7 +10,7 @@
     --text-on-bg: var(--bg);
     --accent: #e07b63;
 
-    --font: sans-serif; 
+    --font: "Arial", sans-serif; 
 
     --text-size-title: 90px;
     --text-size-h1: 60px;
