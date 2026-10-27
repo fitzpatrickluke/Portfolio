@@ -1,3 +1,6 @@
+
+
+
 (function () {
   // Every image with class="zoomable" becomes part of the gallery
   const images = Array.from(document.querySelectorAll('img.zoomable'));

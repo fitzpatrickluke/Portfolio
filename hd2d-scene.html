@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Luke Fitzpatrick - Portfolio</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/lightbox.css">
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <h1> HD-2D Scene </h1>
+        <div class="caseStudy">
+            <video src="ASSETS/Hd2d/v2.mp4" controls width="100%" ></video>
+            
+            <h2> Introduction </h2>
+            <p>
+                For the final project of my creative code course I created a small forest scene in an HD-2D style (2D images within a 3D space with heavy use of shaders). 
+                This style had always piqued my interest, but I was always too intimidated to attempt it myself as I was unfamiliar working with 3D. 
+            </p>
+            <p>
+                Throughout my creative code course, I was pushed to try new coding styles and technologies. 
+                As such, I decided my final project would be the perfect time to finally attempt this style.
+            </p>
+
+            <h2> Setting Up 3D </h2>
+            <p>
+                The first step of this project was to set up a 3D world. 
+                For this project I was using GameMaker, an engine primarily used for 2D while still providing functionality for 3D. 
+                For this part of the project I had to give myself a crash course on how 3D objects are generated onto a screen. 
+            </p><p>   
+                The time spent practicing with more low level graphics topics was valuable in growing my coding skills. 
+                By understanding the basics, I was able to easily import 3D objects later on in the project.
+
+            </p>
+            <p>
+                The terrain consisted of simple 3D cubes with diagonal edges. I coded these by hand to gain familiarity with how 3D vertexes work. 
+                Furthermore, all cubes have only 4 of their 6 faces. As the camera is always looking forward, the back and bottom of the cubes are never seen.
+                Discarding these faces adds a bit of optimization when the code is running.
+            </p><p>   
+                All objects in this world are considered 3D objects. Even the "2D" sprites. 
+                Each sprite is a texture I draw onto a vertical standing wall. 
+                This method is used for the player and all trees, bushes, and flowers. 
+            </p><p>     
+                Initially I had some difficulty directly displaying the transparency of sprites. 
+                I was able to fix all issues by discarding any transparent pixels via a shader.
+            </p>
+
+            <video src="ASSETS/Hd2d/v1.mp4" controls width="100%" ></video>
+
+            <h2> Lighting and Shadows</h2>
+            <p>
+                The hardest aspect of this project was setting up lighting and shadows. 
+                I watched many video tutorials and experienced loads of trial and error until I got lighting and shadows properly working. 
+                I'm still not a pro but I'll do my best to describe the method used.
+            </p><p>     
+                I set up a camera where the sun would be located. 
+                The direction the camera is pointing represents the direction the sun/ light is shining. 
+                I then created a surface that draws the scene from this camera's perspective. 
+                I placed the surface into a shader that calculates the distance between the camera and each object, creating a depth map. 
+                A surface in GameMaker is essentially a screenshot storing everything drawn on screen. 
+            </p><p>     
+                Once the depth is calculated I drew everything on another surface. 
+                This time from the perspective of the final scene. 
+                I passed both the depth map and the new surface into a shader to calculate shadow locations. 
+                I then decreased the rgb value for every pixel considered a shadow.
+            </p><p>     
+                I revisited shadows near the end of the project as I noticed they were all rectangles. 
+                Recall how each 2D sprite was a texture on a vertical, rectangular wall. This was the culprit. 
+                I edited my shader that creates the depth map so it discards information wherever a pixel was transparent. 
+                This made all shadows their proper shapes.
+            </p>
+
+            <div class="imageGridTall">
+                <img class="zoomable" src="ASSETS/Hd2d/shadowV1.png" alt="H2 2D scene with incorrect shadows, all shadows rectangular">
+                <img class="zoomable" src="ASSETS/Hd2d/shadowV2.png" alt="H2 2D scene with correct shadows, shadows in the shape of their object">
+            </div>
+
+            <h2> Post-Processing Effects </h2>
+            <p>
+                The remaining time of this project was spent adding various post-processing effects. 
+                I watched a video that outlined all the different effects one needed for the HD-2D style and used it as a checklist for what effects to include.
+            </p><p>     
+                This step was easier to implement than the previous two as my code was designed in a way that could easily introduce new shaders. 
+                Most effects are in a single fragment shader. 
+                However some effects needed further shaders to achieve their desired outcome, such as bloom and depth of field. 
+                Each shader was either something I coded myself, found online, or made for a previous creative code class assignment.
+            </p><p>     
+                The amount of pop all of these effects added greatly enhances the entire scene despite many of them being only a few lines of code. 
+                I feel contrast is a good example. It is a single line of code but hugely enhances the visuals of the scene.
+            </p><p>             
+                The water used throughout the scene is a flat plane with a repeating texture. 
+                The movement comes from a shader trick that utilizes random noise to distort this texture.
+            </p><p>     
+                The last thing I added was a very simple particle effect. They are made like any other 2D sprite in this scene. 
+                I generate a small dot sprite with random size, speed, and direction. 
+            </p>
+
+            <div class="imageGrid">
+                <img class="zoomable" src="ASSETS/Hd2d/shade1.png" alt="HD 2D scene with no effects">
+                <img class="zoomable" src="ASSETS/Hd2d/shade2.png" alt="HD 2D scene with moving water effect">
+                <img class="zoomable" src="ASSETS/Hd2d/shade3.png" alt="HD 2D scene with depth of field effect">
+                <img class="zoomable" src="ASSETS/Hd2d/shade4.png" alt="HD 2D scene with bloom effect">
+                <img class="zoomable" src="ASSETS/Hd2d/shade5.png" alt="HD 2D scene with color grading">
+                <img class="zoomable" src="ASSETS/Hd2d/shade6.png" alt="HD 2D scene with vignette">
+                <img class="zoomable" src="ASSETS/Hd2d/shade7.png" alt="HD 2D scene with high contrast">
+                <img class="zoomable" src="ASSETS/Hd2d/shade8.png" alt="HD 2D scene with light rays">
+                <img class="zoomable" src="ASSETS/Hd2d/shade9.png" alt="HD 2D scene with particles">
+            </div>
+
+            
+            <h3> Full List of Effects</h3>
+            <ul>
+                <li> Moving Water </li>
+                <li> Depth of Field </li>
+                <li> Bloom </li>
+                <li> Color Grading </li>
+                <li> Vignette </li>
+                <li> High Contrast </li>
+                <li> Light Rays </li>
+                <li> Particles</li>
+            </ul>
+
+            <h3> Conclusion </h3>
+
+            <p> 
+                I'm proud of how this project turned out and impressed that it's something I made. 
+                I wanted to try this technique months back but within a few minutes got intimidated and abandoned the idea. 
+                I develop games as a hobby, and often stick to what I am familiar with. 
+                The structure of this class allowed me to experiment with and practice many new techniques I would have never dared try. 
+                In turn making me a stronger programmer and gave me the confidence to use unconventional tools and techniques.
+            </p><p>     
+                I am hope to utilize this pipeline I made in future projects. 
+                During development, I put a lot of effort into making sure my code was clean, readable, and scalable
+                so that I can use it beyond just this scene.
+            </p>
+
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+     <script src="JS/header.js"></script>
+     <script src="JS/footer.js"></script>
+     <script src="JS/lightbox.js"></script>
+    
+</body>
+</html>

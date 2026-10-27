@@ -69,7 +69,8 @@ h3 {
     line-height: var(--line-height-header);
 }
 
-p {
+p,
+li {
     margin: 0 0 var(--margin-small) 0;
     font-family: var(--font);
     color: var(--body-text);
@@ -277,7 +278,8 @@ p {
   height: auto;
 }
 
-.imageGrid {
+.imageGrid,
+.imageGridTall {
   display: flex;
   flex-wrap: wrap; /* Allows images to drop to the next row */
   gap: var(--gap-XS);
@@ -288,6 +290,16 @@ p {
   width: auto;    /* preserve aspect ratio */
   flex-grow: 0;   /* Stops horizontal stretching */
 }
+
+
+.imageGridTall img {
+  width: calc(50% - (var(--gap-XS) / 2));
+  height: auto;
+  flex-grow: 0;   
+  flex-shrink: 0;
+}
+
+
 
 
 
@@ -318,6 +330,20 @@ p {
     .about .desc {
         padding: 0;
     }
+
+    .caseStudy {
+      width: 75vw;
+      margin: 0 auto;
+    }
+
+        .imageGrid img {
+  height: 160px;
+}
+
+
+
+
+    
 }
 /* ---------- Mobile  ---------- */
 @media (max-width: 600px) {
@@ -326,7 +352,8 @@ p {
   :root {
     --text-size-title: 44px;
     --text-size-h1: 26px;
-    --text-size-h2: 18px;
+    --text-size-h2: 24px;
+    --text-size-h3: 18px;
     --text-size-body: 16px;
     --text-size-body-small: 14px;
     --margin-large: 2rem;
@@ -354,6 +381,19 @@ p {
     
   }
 
+    .caseStudy {
+      width: 100%;
+      margin: 0 auto;
+    }
 
+    .imageGrid img {
+  height: 96px;
+}
+
+
+.imageGridTall img {
+  width: auto;
+  height: 160px;
+}
 
 }
