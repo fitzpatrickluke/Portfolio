@@ -17,7 +17,7 @@ const SITE = {
     },
     {
       title: "Sephora UX Research Report",
-      link: "sephora-ux-research-report.html",
+      link: "sephora-ux.html",
       image: "ASSETS/Home/portfolioSephora.png"
     },
     {

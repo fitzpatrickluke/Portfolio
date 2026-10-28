@@ -34,6 +34,8 @@
     
 }
 
+
+
 body {
     margin: 0 var(--margin-medium);
     display: flex;
@@ -44,6 +46,14 @@ body {
 main {
     flex: 1;
 }
+
+  .marginBottomMedium {
+    margin-bottom: var(--margin-medium) !important;
+  }
+
+  .noMarginTop {
+    margin-top: 0;
+  }
 
 h1 {
     margin: var(--margin-medium) 0;
@@ -74,6 +84,13 @@ li {
     margin: 0 0 var(--margin-small) 0;
     font-family: var(--font);
     color: var(--body-text);
+    font-size: var(--text-size-body);
+    line-height: var(--line-height-body);
+}
+
+.pdfLink {
+    margin: 0 0 var(--margin-small) 0;
+    font-family: var(--font);
     font-size: var(--text-size-body);
     line-height: var(--line-height-body);
 }
@@ -278,6 +295,7 @@ li {
   height: auto;
 }
 
+
 .imageGrid,
 .imageGridTall {
   display: flex;
@@ -299,8 +317,30 @@ li {
   flex-shrink: 0;
 }
 
+.imageGridFour {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: var(--gap-XS);
+  width: 100%;
+}
+
+.imageGridFour img {
+  width: calc(25% - (var(--gap-XS) * 3 / 4)); /* Divides space evenly into 4 columns minus gaps */
+  height: auto;                               /* Keeps original height proportions */
+  object-fit: contain;
+}
 
 
+.row {
+  display: flex;
+  gap: var(--gap-small); 
+}
+
+.col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
 
 
 /* ==========================================================================
@@ -362,6 +402,8 @@ li {
   body {
     margin: 0 var(--margin-small);
   }
+
+
   
 .project,
   .project.flip {
@@ -395,5 +437,9 @@ li {
   width: auto;
   height: 160px;
 }
+
+.row {
+    flex-direction: column;
+  }
 
 }
