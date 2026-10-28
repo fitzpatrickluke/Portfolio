@@ -53,7 +53,10 @@
   overlay.querySelector('.lb-close').addEventListener('click', (e) => { e.stopPropagation(); close(); });
 
   // Clicking anywhere else (background or the image itself) closes
-  overlay.addEventListener('click', close);
+overlay.addEventListener('click', () => {
+  if (swiped) { swiped = false; return; }
+  close();
+});
 
   // Keyboard support
   document.addEventListener('keydown', (e) => {
@@ -62,4 +65,52 @@
     if (e.key === 'ArrowLeft') show(current - 1);
     if (e.key === 'ArrowRight') show(current + 1);
   });
-})();
+
+  // ⬇️ PASTE THE SWIPE SNIPPET HERE ⬇️
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let swiped = false;
+
+  overlay.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].clientX;
+    touchStartY = e.changedTouches[0].clientY;
+    swiped = false;
+  }, { passive: true });
+
+  overlay.addEventListener('touchend', (e) => {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    const dy = e.changedTouches[0].clientY - touchStartY;
+
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+      swiped = true;
+      show(dx < 0 ? current + 1 : current - 1);
+    }
+  }, { passive: true });
+
+})();   // <- the existing end of the lightbox, don't duplicate this
+
+
+
+
+
+document.querySelectorAll('[data-rows]').forEach(grid => {
+  const sizes = grid.dataset.rows.split(',').map(Number);
+  const imgs = [...grid.querySelectorAll('img')];
+  grid.textContent = '';
+
+  let i = 0;
+  for (const n of sizes) {
+    if (i >= imgs.length) break;
+    const row = document.createElement('div');
+    row.className = 'imageRow';
+    row.append(...imgs.slice(i, i + n));
+    grid.append(row);
+    i += n;
+  }
+});
+
+document.querySelectorAll('.imageRow img').forEach(img => {
+  const setRatio = () =>
+    img.style.setProperty('--ar', img.naturalWidth / img.naturalHeight);
+  img.complete ? setRatio() : img.addEventListener('load', setRatio);
+});

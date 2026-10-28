@@ -296,39 +296,9 @@ li {
 }
 
 
-.imageGrid,
-.imageGridTall {
-  display: flex;
-  flex-wrap: wrap; /* Allows images to drop to the next row */
-  gap: var(--gap-XS);
-}
-
-.imageGrid img {
-  height: 200px;
-  width: auto;    /* preserve aspect ratio */
-  flex-grow: 0;   /* Stops horizontal stretching */
-}
 
 
-.imageGridTall img {
-  width: calc(50% - (var(--gap-XS) / 2));
-  height: auto;
-  flex-grow: 0;   
-  flex-shrink: 0;
-}
 
-.imageGridFour {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: var(--gap-XS);
-  width: 100%;
-}
-
-.imageGridFour img {
-  width: calc(25% - (var(--gap-XS) * 3 / 4)); /* Divides space evenly into 4 columns minus gaps */
-  height: auto;                               /* Keeps original height proportions */
-  object-fit: contain;
-}
 
 
 .row {
@@ -340,6 +310,18 @@ li {
   flex: 1;
   display: flex;
   flex-direction: column;
+}
+
+.row.alignBottom {
+  align-items: flex-end;
+}
+
+
+
+.figmaEmbed {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
 }
 
 
@@ -441,5 +423,19 @@ li {
 .row {
     flex-direction: column;
   }
+
+  .siteHeader nav {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.siteHeader nav a {
+  flex: 1;                  /* each link takes an equal share */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0;          /* remove the desktop spacing */
+}
 
 }
