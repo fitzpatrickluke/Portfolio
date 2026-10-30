@@ -19,7 +19,7 @@
     --text-size-body: 20px;
     --text-size-body-small: 16px;
 
-    --line-height-header: 1.1;
+    --line-height-header: 1.25;
     --line-height-body: 1.5;
 
     --gap-XS: 0.5rem;
@@ -51,9 +51,7 @@ main {
     margin-bottom: var(--margin-medium) !important;
   }
 
-  .noMarginTop {
-    margin-top: 0;
-  }
+
 
 h1 {
     margin: var(--margin-medium) 0;
@@ -155,6 +153,7 @@ li {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 
   background-color: var(--bg-dark);
   color: var(--accent);
@@ -324,6 +323,10 @@ li {
   aspect-ratio: 16 / 9;
 }
 
+.displaySmall{
+  display: none;
+}
+
 
 /* ==========================================================================
    RESPONSIVE STYLES
@@ -364,9 +367,31 @@ li {
 
 
 
+.displaySmall{
+  display: none;
+}
+
+
 
     
 }
+
+  .noMarginTop {
+    margin-top: 0;
+  }
+
+/* ---------- Desktop  ---------- */
+@media (min-width: 601px) {
+  .noMarginTopCol {
+    margin-top: 0;
+  }
+
+  .imageSmall {
+  width: 50%;
+  height: auto; /* Keeps the aspect ratio intact so the image doesn't stretch */
+}
+}
+
 /* ---------- Mobile  ---------- */
 @media (max-width: 600px) {
 
@@ -422,6 +447,7 @@ li {
 
 .row {
     flex-direction: column;
+    gap: 0;
   }
 
   .siteHeader nav {
@@ -437,5 +463,14 @@ li {
   justify-content: center;
   margin-right: 0;          /* remove the desktop spacing */
 }
+
+
+.displayLarge{
+  display: none;
+}
+
+.displaySmall {
+    display: block; 
+  }
 
 }
