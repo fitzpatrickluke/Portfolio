@@ -26,6 +26,11 @@ const SITE = {
       image: "ASSETS/Home/portfolio2C.png"
     },
     {
+      title: "Honolulu Olympics Visual Identity",
+      link: "honolulu-olympics-system.html",
+      image: "ASSETS/Home/portfolioHonoluluOlympics.png"
+    },
+    {
       title: "HD-2D Scene",
       link: "hd2d-scene.html",
       image: "ASSETS/Home/portfolioHD.png"

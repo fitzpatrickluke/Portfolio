@@ -294,6 +294,16 @@ li {
   height: auto;
 }
 
+.imageSmall {
+  width: 50%;
+  height: auto;
+}
+
+.imageCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 
 
