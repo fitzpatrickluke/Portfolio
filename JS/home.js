@@ -23,7 +23,7 @@ const SITE = {
     {
       title: "2nd & Charles Website Redesign",
       link: "2Charles-redesign.html",
-      image: "ASSETS/home/portfolio2C.png"
+      image: "ASSETS/Home/portfolio2C.png"
     },
     {
       title: "HD-2D Scene",
